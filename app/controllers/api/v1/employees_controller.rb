@@ -11,6 +11,7 @@ class Api::V1::EmployeesController < ApplicationController
                             )
 
     @employee.save
+    # take to the show page of the new user
     render :show
   end
 
@@ -18,9 +19,9 @@ class Api::V1::EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
   end
 
-  def update 
+  def update
     @employee = Employee.find(params[:id])
-    
+
     @employee.assign_attributes(
                                 first_name: params[:first_name],
                                 last_name: params[:last_name],
@@ -28,7 +29,7 @@ class Api::V1::EmployeesController < ApplicationController
                                 )
     employee.save
     render :show
-            
+
   end
 
   def destroy
