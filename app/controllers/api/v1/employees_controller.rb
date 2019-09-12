@@ -35,6 +35,6 @@ class Api::V1::EmployeesController < ApplicationController
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
-    render json: {message: "employee destroyed"}, code: 200
+    render json: {message: "employee deleted"}, code: 200
   end
 end
